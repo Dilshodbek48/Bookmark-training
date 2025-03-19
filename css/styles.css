@@ -1,3 +1,33 @@
+/* CUSTOM-PROPS */
+:root{
+  --accent-color: #5267df;
+  --text-color: #242a45;
+  --text-color-50: rgba(36, 42, 69, 0.5);
+  --text-color-75: rgba(36, 42, 69, 0.75);
+  --color-brown: #f7f7f7;
+  --color-red: #fa5959;
+}
+
+/* FONTS */
+@font-face {
+  font-family: "Rubik";
+  src: url("/fonts/Rubik-Regular.woff2") format("woff2"),
+    url("/fonts/Rubik-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url("/fonts/Rubik-Medium.woff2") format("woff2"),
+    url("/fonts/Rubik-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 /* GLOBAL */
 html {
 box-sizing: border-box;
@@ -17,11 +47,12 @@ flex-direction: column;
 height: 100%;
 padding: 0;
 margin: 0;
-font-family: "Arial", sans-serif;
-font-size: 16px;
-line-height: 1.5;
+font-family: "Rubik", "Arial", sans-serif;
+font-size: 18px;
+font-weight: normal;
+line-height: 28px;
 background-color: #fff;
-color: #222;
+color: var(--text-color);
 }
 
 img {
@@ -32,14 +63,219 @@ height: auto;
 /* CONTAINER */
 .container {
 width: 100%;
-max-width: 1200px;
+max-width: 1210px;
 padding-left: 50px;
 padding-right: 50px;
 margin-left: auto;
 margin-right: auto;
 }
 
+
+/* BUTTON */
+.button {
+  display: inline-block;
+  padding: 10px 24px;
+  font-size: 14px;
+  letter-spacing: 0.25px;
+  font-weight: 500;
+  border: 2px solid transparent;
+  color: #fff;
+  background-color: var(--accent-color);
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button-long {
+  padding: 10px 34px;
+}
+
+.button-big {
+  padding: 12px 34px;
+  font-size: 13px;
+  line-height: 17px;
+  letter-spacing: 1.5px;
+}
+
+.button-red {
+  background-color: var(--color-red);
+}
+
+.button-brown {
+  color: var(--text-color-75);
+  background-color: var(--color-brown);
+}
+
+
 /* MAIN-CONTENT */
 .main-content {
   flex-grow: 1;
+}
+
+
+/* SITE-HEADER */
+.site-header {
+  padding-top: 46px;
+  padding-bottom: 48px;
+}
+
+.site-header__container {
+  display: flex;
+  width: 1204px;
+  align-items: center;
+  padding-bottom: 6px;
+  padding-left: 52px;
+  padding-right: 46px;
+}
+
+.site-header__logo {
+  margin-right: 20px;
+}
+
+.logo {
+  display: flex;
+  width: 148px;
+  height: 25px;
+}
+
+.site-header__site-name {
+  margin: 0;
+}
+
+.site-nav {
+  margin-left: auto;
+  margin-right: 42px;
+}
+
+.site-nav__list {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.site-nav__item {
+  font-size: 13px;
+  line-height: 17px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.site-nav__item:not(:last-child) {
+  margin-right: 46px;
+}
+
+.site-nav__link {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.4s ease,
+  opacity 0.4s ease;
+}
+
+.site-nav__link:hover {
+  color: var(--color-red);
+}
+
+.site-nav__link:active {
+  opacity: 0.6;
+}
+
+.site-header__button {
+  transition: color 0.4s ease,
+  border-color 0.4s ease,
+  background-color 0.4s ease;
+}
+
+.site-header__button:hover {
+  color: var(--color-red);
+  border-color: var(--color-red);
+  background-color: transparent;
+}
+
+.site-header__button:active {
+  opacity: 0.6;
+}
+
+
+/* HERO */
+.hero {
+  padding-top: 130px;
+  padding-bottom: 203px;
+  background-image: url(../img/hero-img.svg);
+  background-repeat: no-repeat;
+  background-position: left calc(50% + 340px) top 50px;
+}
+
+
+
+.hero__container {
+  position: relative;
+  width: 100%;
+  max-width: 1210px;
+}
+
+.hero__container::before {
+  position: absolute;
+  z-index: -1;
+  bottom: -122px;
+  right: -600px;
+  background-image: url(../img/hero-rectangle.svg);
+  width: 1000px;
+  height: 352px;
+  content: "";
+}
+
+.hero__content-wrapper {
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  width: 540px;
+}
+
+.hero__heading {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 48px;
+  line-height: 52px;
+  letter-spacing: -0.15px;
+  font-weight: 500;
+}
+
+.hero__title {
+  margin-top: 0;
+  margin-bottom: 29px;
+  letter-spacing: 0;
+  color: var(--text-color-50);
+}
+
+.hero-button {
+  transition: color 0.4s ease,
+  border-color 0.4s ease,
+  background-color 0.4s ease;
+}
+
+.hero-button:not(:last-child) {
+  margin-right: 16px;
+}
+
+.hero-button:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+  background-color: transparent;
+}
+
+.hero-button:active {
+  opacity: 0.6;
+}
+
+.hero-button__brown:hover {
+  color: var(--text-color-75);
+  border-color: var(--text-color-75);
+  background-color: transparent;
+}
+
+.hero-button__brown:active {
+  opacity: 0.6;
 }
