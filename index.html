@@ -214,7 +214,11 @@
         <h2 class="contact__title">Stay up-to-date with what
           we’re doing</h2>
         <form class="contact__form" action="https://echo.htmlacademy.ru" method="POST">
-          <input class="contact__input" type="email" name="email" placeholder="Enter your email address" aria-label="Contact" required>
+          <div class="contact__input-wrapper">
+            <input class="contact__input" type="email" name="email" placeholder="Enter your email address" aria-label="Contact" required>
+            <img class="contact__input-error-icon" src="img/error-disc.svg" alt="" width="20" height="20" >
+            <div class="contact__error-msg">Whoops, make sure it’s an email</div>
+          </div>
           <button class="contact__button button button-red" type="submit">Contact Us</button>
         </form>
       </div>

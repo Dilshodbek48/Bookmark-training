@@ -28,6 +28,16 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Rubik";
+  src: url("/fonts/Rubik-MediumItalic.woff2") format("woff2"),
+    url("/fonts/Rubik-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+
 
 /* GLOBAL */
 html {
@@ -85,7 +95,6 @@ margin-right: auto;
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
 
 /* BUTTON */
 .button {
@@ -267,9 +276,6 @@ margin-right: auto;
   content: "";
 }
 
-.hero__content-wrapper {
-}
-
 .hero__content {
   display: flex;
   flex-direction: column;
@@ -314,9 +320,6 @@ margin-right: auto;
 
 
 /* FEATURES */
-.index-features {
-}
-
 .index-features__container {
   display: flex;
   justify-content: center;
@@ -406,9 +409,6 @@ margin-right: auto;
 
 .services__button:active {
   opacity: 0.6;
-}
-
-.services-contents__wrapper {
 }
 
 .services-content {
@@ -556,17 +556,10 @@ margin-right: auto;
   align-items: center;
 }
 
-.ask-top-wrapper {
-}
-
 .ask-top {
   margin-bottom: 56px;
 }
 
-.ask-list__wrapper {
-}
-.visually-hidden {
-}
 .ask-list {
   width: 540px;
   padding: 0;
@@ -592,6 +585,7 @@ margin-right: auto;
   color: var(--text-color);
   background-color: transparent;
   border: 0;
+  cursor: pointer;
   transition: color 0.4s ease,
   opacity 0.4s ease;
 }
@@ -617,7 +611,7 @@ margin-right: auto;
 }
 
 .ask-list__text.ask-list-text-active {
-  display: block; /* Faol bo'lganda ko'rsatiladi */
+  display: block; /* Faol bo"lganda ko"rsatiladi */
 }
 
 .ask-list-button__icon {
@@ -637,27 +631,6 @@ margin-right: auto;
   display: block;
 }
 
-
-
-
-/* .ask-list-button__icon {
-  display: none;
-  width: 16px;
-  height: 8px;
-}
-
-.ask-list-button-icon-up {
-  display: none;
-}
-
-.ask-list-button__icon-active {
-  display: block;
-}
-
-.ask-list-button-icon-up-active {
-  display: block;
-} */
-
 .ask-list__text {
   display: none;
   padding-top: 32px;
@@ -672,6 +645,7 @@ margin-right: auto;
   display: block;
 }
 
+
 /* CONTACT */
 .contact {
   padding-top: 58px;
@@ -685,7 +659,6 @@ margin-right: auto;
   flex-direction: column;
   align-items: center;
 }
-
 
 .contact__text {
   margin-bottom: 24px;
@@ -710,9 +683,18 @@ margin-right: auto;
 }
 
 .contact__form {
+  display: flex;
+}
+
+.contact__input-wrapper {
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .contact__input {
+  z-index: 2;
   min-width: 300px;
   padding: 10px 20px;
   margin-right: 10px;
@@ -720,9 +702,50 @@ margin-right: auto;
   line-height: 28px;
   letter-spacing: 0.25px;
   border-radius: 5px;
-  border: transparent;
+  border: 2px solid transparent;
   letter-spacing: 0.25px;
-  color: var(--text-color-25);
+  color: var(--text-color);
+}
+
+
+.contact__input-error-icon {
+  z-index: 5;
+  display: none;
+  position: absolute;
+  top: 16px;
+  right: 22px;
+  width: 20px;
+  height: 20px;
+}
+
+.contact__input:not(:focus):not(:placeholder-shown):invalid ~ .contact__input-error-icon {
+  display: block;
+}
+
+.contact__input:not(:focus):not(:placeholder-shown):invalid {
+  border-color: var(--color-red);
+  color: var(--color-red);
+}
+
+.contact__error-msg {
+  display: none;
+}
+
+.contact__input:not(:focus):not(:placeholder-shown):invalid ~ .contact__error-msg {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 300px;
+  padding: 52px 12px 6px;
+  font-size: 10px;
+  line-height: normal;
+  font-weight: 500;
+  letter-spacing: 0.25px;
+  font-style: italic;
+  border-radius: 5px;
+  color: #fff;
+  background-color: var(--color-red);
 }
 
 

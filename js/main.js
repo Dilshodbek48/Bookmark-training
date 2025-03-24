@@ -2,9 +2,6 @@ const elServicesButton = document.querySelectorAll('.services__button');
 const elServicesContent = document.querySelectorAll('.services-content');
 
 const elAskListButton = document.querySelectorAll('.ask-list-button');
-const elAskListText = document.querySelectorAll('.ask-list__text');
-const elAskListIcon = document.querySelectorAll('.ask-list-button__icon');
-const elASkListIconUp = document.querySelectorAll('.ask-list-icon-up');
 if (elServicesButton.length > 0) {
   elServicesButton.forEach((tab, index) => {
     tab.addEventListener('click', function (evt) {
@@ -18,9 +15,6 @@ if (elServicesButton.length > 0) {
     });
   });
 };
-
-
-
 
 
 
