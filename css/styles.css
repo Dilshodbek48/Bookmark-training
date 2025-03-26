@@ -798,7 +798,7 @@ margin-right: auto;
 .site-footer-socials__link {
   color: #fff;
   transition: color 0.4s ease,
-  opacity color 0.4s ease;
+  opacity 0.4s ease;
 }
 
 .site-footer-socials__link:hover {
