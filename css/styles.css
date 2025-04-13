@@ -257,8 +257,6 @@ margin-right: auto;
   background-position: left calc(50% + 340px) top 50px;
 }
 
-
-
 .hero__container {
   position: relative;
   width: 100%;
@@ -416,7 +414,7 @@ margin-right: auto;
   justify-content: center;
 }
 
-.services-content.services-content-active{
+.services-content.services-content-active {
   display: flex;
 }
 
@@ -696,7 +694,7 @@ margin-right: auto;
 .contact__input {
   z-index: 2;
   min-width: 300px;
-  padding: 10px 20px;
+  padding: 10px 32px 10px 20px;
   margin-right: 10px;
   font-size: 14px;
   line-height: 28px;
